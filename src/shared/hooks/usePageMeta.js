@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { OG_IMAGE, SITE_NAME, SITE_URL, routeMeta } from "@/shared/data/seo";
+import { SITE_NAME, routeMeta } from "@/shared/data/seo";
+import { SITE_URL } from "@/shared/config";
+
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 function setMeta(selector, attr, value) {
   let el = document.head.querySelector(selector);

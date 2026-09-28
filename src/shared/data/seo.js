@@ -1,6 +1,9 @@
-export const SITE_URL = "https://kiranenterprise.in";
+export const DEFAULT_SITE_URL = "https://kiranenterprise.in";
 export const SITE_NAME = "Kiran Enterprise";
-export const OG_IMAGE = `${SITE_URL}/og-image.png`;
+
+export function resolveSiteUrl(value) {
+  return (value || DEFAULT_SITE_URL).replace(/\/+$/, "");
+}
 
 export const ROUTES = [
   {

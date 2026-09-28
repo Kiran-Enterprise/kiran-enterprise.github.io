@@ -1,6 +1,6 @@
 import { JsonLd, QuickRequest } from "@/shared/components";
 import { site } from "@/shared/data/site";
-import { SITE_URL } from "@/shared/data/seo";
+import { SITE_URL } from "@/shared/config";
 import { usePageMeta } from "@/shared/hooks";
 import { Hero } from "../components/Hero";
 import { HowItWorks } from "../components/HowItWorks";

@@ -35,6 +35,9 @@ jobs:
         run: npm run lint
 
       - name: Build project
+        env:
+          BASE_PATH: /
+          VITE_SITE_URL: https://kiran-enterprise.github.io
         run: npm run build
 
       - name: Upload build artifact

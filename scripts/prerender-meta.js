@@ -1,10 +1,12 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { ROUTES, SITE_URL } from "../src/shared/data/seo.js";
+import { DEFAULT_SITE_URL, ROUTES, resolveSiteUrl } from "../src/shared/data/seo.js";
+
+const SITE_URL = resolveSiteUrl(process.env.VITE_SITE_URL);
 
 const dist = resolve(dirname(fileURLToPath(import.meta.url)), "../dist");
-const template = await readFile(resolve(dist, "index.html"), "utf8");
+const template = (await readFile(resolve(dist, "index.html"), "utf8")).replaceAll(DEFAULT_SITE_URL, SITE_URL);
 
 const escapeAttr = (value) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
