@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { DEFAULT_SITE_URL, ROUTES, resolveSiteUrl } from "../src/shared/data/seo.js";
@@ -27,9 +27,8 @@ for (const route of ROUTES) {
   html = replaceTag(html, /<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${escapeAttr(route.title)}" />`);
   html = replaceTag(html, /<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${escapeAttr(route.description)}" />`);
 
-  const outDir = route.path === "/" ? dist : resolve(dist, route.path.slice(1));
-  await mkdir(outDir, { recursive: true });
-  await writeFile(resolve(outDir, "index.html"), html, "utf8");
+  const outFile = route.path === "/" ? "index.html" : `${route.path.slice(1)}.html`;
+  await writeFile(resolve(dist, outFile), html, "utf8");
 }
 
 console.log(`[prerender] Wrote route-specific HTML for ${ROUTES.length} routes`);
