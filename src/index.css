@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bricolage Grotesque", "Instrument Sans", sans-serif;
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+
+  --color-ink: #16211f;
+  --color-ink-soft: #2f3b38;
+  --color-slate: #5c6763;
+  --color-slate-light: #8a938f;
+  --color-line: #dde2df;
+  --color-line-soft: #ebeeec;
+  --color-paper: #f4f5f2;
+  --color-surface: #ffffff;
+
+  --color-copper-50: #fdf5ee;
+  --color-copper-100: #fae6d4;
+  --color-copper-200: #f1c7a3;
+  --color-copper-500: #c5621f;
+  --color-copper-600: #b5561d;
+  --color-copper-700: #8f4216;
+  --color-copper-900: #4a2109;
+
+  --color-verdigris-50: #eef7f3;
+  --color-verdigris-100: #d9ede5;
+  --color-verdigris-200: #a9d6c6;
+  --color-verdigris-500: #2f8a75;
+  --color-verdigris-600: #26775f;
+  --color-verdigris-700: #1d5c4a;
+  --color-verdigris-900: #0f3128;
+
+  --radius-card: 20px;
+  --radius-sm: 10px;
+
+  --shadow-md:
+    0 4px 12px -2px rgba(22, 33, 31, 0.06),
+    0 12px 32px -12px rgba(22, 33, 31, 0.14);
+}
+
+@utility section-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility hero-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
