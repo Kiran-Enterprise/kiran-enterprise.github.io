@@ -1,4 +1,4 @@
-import { Button, SectionHeading } from "@/shared/components";
+import { Button, Reveal, SectionHeading } from "@/shared/components";
 import { site } from "@/shared/data/site";
 import { photos } from "@/shared/data/photos";
 
@@ -18,8 +18,8 @@ export function WhatWeBuy() {
         </div>
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {site.buyCategories.map((category) => (
-            <li key={category.key} className="overflow-hidden rounded-card border border-line bg-paper">
+          {site.buyCategories.map((category, index) => (
+            <Reveal as="li" key={category.key} delay={index * 80} className="overflow-hidden rounded-card border border-line bg-paper">
               <img
                 src={photos[category.photo]}
                 alt={category.title}
@@ -30,7 +30,7 @@ export function WhatWeBuy() {
                 <h3 className="font-display text-lg font-semibold text-ink">{category.title}</h3>
                 <p className="mt-1 text-[15px] leading-relaxed text-slate">{category.body}</p>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ul>
 

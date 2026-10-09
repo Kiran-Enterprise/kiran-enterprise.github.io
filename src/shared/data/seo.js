@@ -39,6 +39,14 @@ export const ROUTES = [
     priority: "0.5",
   },
   {
+    path: "/gallery",
+    title: "Gallery | Laptops, desktops and e-waste we handle | Kiran Enterprise",
+    description:
+      "Photos from our Bengaluru storeroom: used laptops, desktops, monitors, chargers and e-waste we buy, collect and sort.",
+    changefreq: "monthly",
+    priority: "0.5",
+  },
+  {
     path: "/contact",
     title: "Contact Kiran Enterprise | Call, WhatsApp or visit us in Bengaluru",
     description:

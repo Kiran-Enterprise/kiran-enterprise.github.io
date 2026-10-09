@@ -6,6 +6,7 @@ import { Hero } from "../components/Hero";
 import { HowItWorks } from "../components/HowItWorks";
 import { WhatWeBuy } from "../components/WhatWeBuy";
 import { EwasteOverview } from "../components/EwasteOverview";
+import { Storeroom } from "../components/Storeroom";
 import { TrustPoints } from "../components/TrustPoints";
 import { Faq } from "../components/Faq";
 import { CtaBand } from "../components/CtaBand";
@@ -58,6 +59,7 @@ function HomePage() {
       <HowItWorks />
       <WhatWeBuy />
       <EwasteOverview />
+      <Storeroom />
       <TrustPoints />
       <section data-nav="/contact" className="section-shell py-16 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">

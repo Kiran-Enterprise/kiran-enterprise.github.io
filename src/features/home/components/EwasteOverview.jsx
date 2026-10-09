@@ -1,6 +1,6 @@
 import { Button, SectionHeading } from "@/shared/components";
 import { site } from "@/shared/data/site";
-import { photos } from "@/shared/data/photos";
+import { shopPhotos } from "@/shared/data/photos";
 
 export function EwasteOverview() {
   return (
@@ -32,8 +32,8 @@ export function EwasteOverview() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
           <img
-            src={photos.ewastePile}
-            alt="A heap of discarded computers, monitors and printers"
+            src={shopPhotos.optiplexCpus}
+            alt="Old desktop computers and monitors stacked for collection"
             className="aspect-[4/3] w-full rounded-card object-cover lg:aspect-[16/10]"
             loading="lazy"
           />

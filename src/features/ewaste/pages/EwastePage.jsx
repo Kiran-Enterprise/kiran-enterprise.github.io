@@ -1,14 +1,14 @@
-import { PageIntro, SectionHeading } from "@/shared/components";
+import { PageIntro, Photo, SectionHeading } from "@/shared/components";
 import { site } from "@/shared/data/site";
-import { photos } from "@/shared/data/photos";
+import { shopPhotos } from "@/shared/data/photos";
 import { usePageMeta } from "@/shared/hooks";
 import { CtaBand } from "@/features/home";
 import { PickupForm } from "../components/PickupForm";
 
 const GALLERY = [
-  { photo: photos.ewasteBench, alt: "Old keyboards, monitors and cables stacked on a bench" },
-  { photo: photos.serverTech, alt: "A technician working inside a server rack" },
-  { photo: photos.circuit, alt: "Close-up of components on a circuit board" },
+  { photo: shopPhotos.monitorsTable, alt: "Old monitors and keyboards stacked on a table" },
+  { photo: shopPhotos.notWorkingCpus, alt: "Dead desktop CPUs, UPS units and power supplies tagged not working" },
+  { photo: shopPhotos.cabinetCables, alt: "A cabinet of tangled cables and peripherals awaiting disposal" },
 ];
 
 function EwastePage() {
@@ -60,14 +60,8 @@ function EwastePage() {
 
       <section className="section-shell pt-4">
         <div className="grid gap-4 sm:grid-cols-3">
-          {GALLERY.map((item) => (
-            <img
-              key={item.alt}
-              src={item.photo}
-              alt={item.alt}
-              className="aspect-[4/3] w-full rounded-card object-cover"
-              loading="lazy"
-            />
+          {GALLERY.map((item, index) => (
+            <Photo key={item.alt} src={item.photo} alt={item.alt} delay={index * 100} />
           ))}
         </div>
       </section>

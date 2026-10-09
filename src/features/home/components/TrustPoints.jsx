@@ -1,4 +1,4 @@
-import { SectionHeading } from "@/shared/components";
+import { Reveal, SectionHeading } from "@/shared/components";
 import { site } from "@/shared/data/site";
 
 export function TrustPoints() {
@@ -10,11 +10,11 @@ export function TrustPoints() {
           lede="Most of our pickups come from someone who was referred by a previous one."
         />
         <ul className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2">
-          {site.trust.map((point) => (
-            <li key={point.title} className="border-l-2 border-ink pl-5">
+          {site.trust.map((point, index) => (
+            <Reveal as="li" key={point.title} delay={index * 100} className="border-l-2 border-ink pl-5">
               <h3 className="font-display text-xl font-semibold text-ink">{point.title}</h3>
               <p className="mt-2 max-w-md text-[15px] leading-relaxed text-slate">{point.body}</p>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

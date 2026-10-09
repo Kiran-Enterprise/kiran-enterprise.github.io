@@ -1,8 +1,14 @@
-import { Button, PageIntro, SectionHeading } from "@/shared/components";
+import { Button, PageIntro, Photo, SectionHeading } from "@/shared/components";
 import { site } from "@/shared/data/site";
-import { photos } from "@/shared/data/photos";
+import { shopPhotos } from "@/shared/data/photos";
 import { usePageMeta } from "@/shared/hooks";
 import { CtaBand } from "@/features/home";
+
+const YARD = [
+  { photo: shopPhotos.laptopsCornerView, alt: "Laptops stacked in rows in a corner of our storeroom" },
+  { photo: shopPhotos.laptopsByWall, alt: "A wall of laptops waiting to be tested and sorted" },
+  { photo: shopPhotos.adaptersHeap, alt: "A heap of laptop chargers collected with the machines" },
+];
 
 function AboutPage() {
   usePageMeta("/about");
@@ -16,8 +22,8 @@ function AboutPage() {
 
       <section className="section-shell pb-12">
         <img
-          src={photos.laptopHands}
-          alt="Hands typing on an old laptop keyboard"
+          src={shopPhotos.laptopRows}
+          alt="Rows of used laptops sorted and stacked in our storeroom"
           className="aspect-[21/9] w-full rounded-card object-cover object-center"
           loading="lazy"
         />
@@ -53,6 +59,14 @@ function AboutPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="section-shell pb-16 sm:pb-20">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {YARD.map((item, index) => (
+            <Photo key={item.alt} src={item.photo} alt={item.alt} delay={index * 100} />
+          ))}
         </div>
       </section>
 

@@ -7,5 +7,7 @@ export { SectionHeading } from "./SectionHeading";
 export { PageIntro } from "./PageIntro";
 export { Field, Input, Select, Textarea, ChoiceTile } from "./Field";
 export { QuickRequest } from "./QuickRequest";
+export { Reveal } from "./Reveal";
+export { Photo } from "./Photo";
 export { JsonLd } from "./JsonLd";
 export { WhatsAppIcon } from "./WhatsAppIcon";

@@ -1,9 +1,15 @@
-import { PageIntro } from "@/shared/components";
+import { PageIntro, Photo } from "@/shared/components";
 import { site } from "@/shared/data/site";
-import { photos } from "@/shared/data/photos";
+import { photos, shopPhotos } from "@/shared/data/photos";
 import { usePageMeta } from "@/shared/hooks";
 import { CtaBand } from "@/features/home";
 import { QuoteForm } from "../components/QuoteForm";
+
+const STOCK = [
+  { photo: shopPhotos.laptopBoxes, alt: "Boxes packed with used laptops ready for pickup" },
+  { photo: shopPhotos.laptopsStorage, alt: "Rows of laptops and monitors in our storage room" },
+  { photo: shopPhotos.adapters, alt: "A heap of laptop chargers and adapters" },
+];
 
 function SellPage() {
   usePageMeta("/sell");
@@ -69,6 +75,14 @@ function SellPage() {
               and a serial-numbered wipe record for every drive.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="section-shell pb-16 sm:pb-20">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {STOCK.map((item, index) => (
+            <Photo key={item.alt} src={item.photo} alt={item.alt} delay={index * 100} />
+          ))}
         </div>
       </section>
 

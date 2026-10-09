@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "Home", to: "/" },
   { label: "Sell hardware", to: "/sell" },
   { label: "E-waste pickup", to: "/e-waste" },
+  { label: "Gallery", to: "/gallery" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
